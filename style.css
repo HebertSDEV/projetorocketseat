@@ -93,13 +93,11 @@ body {
   z-index: 1;
   left: initial;
   transform: translateY(-50%);
-  transition: filter 0.3s ease;
-  animation: flash 1s infinite;
+  animation: slid-back 0.4s forwards;
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slid-in 0.4s forwards;
 }
 
 #switch span {
@@ -196,5 +194,24 @@ footer a {
   }
   .light {
     --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* animation */
+@keyframes slid-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slid-back {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
   }
 }
